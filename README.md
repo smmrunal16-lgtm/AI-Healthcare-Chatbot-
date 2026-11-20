@@ -1,30 +1,53 @@
-# HealthCare AI — Advanced AI Healthcare Chatbot
+# HealthCare AI — Healthcare Information Chatbot
 
-A PHP 8+ and MySQL academic prototype for a final-year Computer Science Engineering project.
+A responsive PHP 8+ academic prototype for a Computer Science Engineering project. It provides a simple chat interface for general health-information questions, with an optional OpenAI-compatible chat-completions API connection.
 
-## Advanced modules
-- Secure registration, login, logout, password hashing, session cookies and CSRF validation.
-- AI health-information chat using an OpenAI-compatible API, with saved conversations and recent chat context.
-- Clearly labelled demo mode when no AI API key is configured.
-- Symptom safety guide with emergency keyword escalation; it does not diagnose or store symptom text.
-- Appointment request workflow with date validation and request status tracking (prototype only; not connected to clinics).
-- User profile settings for display name, language and theme preference.
-- Admin dashboard with aggregate application statistics.
-- Responsive PHP, MySQL, HTML, CSS and vanilla JavaScript interface.
+## Features
 
-## Download the advanced source package
-The complete advanced source package is available as the **HealthCare AI Chatbot Advanced ZIP** attached in the project conversation. Extract it into your XAMPP htdocs folder to run the full application. The ZIP includes all PHP source files, database schema, CSS, JavaScript and setup documentation.
+- Responsive chat interface built with PHP, HTML, CSS and vanilla JavaScript.
+- PHP JSON endpoints for sending and clearing chat messages.
+- Optional AI API integration configured through server environment variables.
+- Clearly labelled demo mode when AI credentials are not configured.
+- Basic emergency-keyword escalation for selected urgent phrases.
+- Session-based short chat context and CSRF-token validation.
+- No database is required for this starter version.
 
-## Run with XAMPP
-1. Install XAMPP and extract the project into `C:\xampp\htdocs\healthcare_ai_chatbot`.
-2. Start Apache and MySQL.
-3. Import `database/healthcare.sql` using phpMyAdmin. If upgrading an existing database, run the new `appointments` and `user_preferences` table definitions at the bottom of the SQL file.
-4. Configure `DB_HOST`, `DB_NAME`, `DB_USER` and `DB_PASS` in the PHP environment or in `config/database.php`.
-5. For live AI, configure `AI_API_KEY`, `AI_API_URL` and `AI_MODEL` as server environment variables. Never commit API keys. Without a key, demo mode is used.
-6. Open `http://localhost/healthcare_ai_chatbot/`. Adjust `BASE_URL` in `config/app.php` if the folder name differs.
-7. Register an account. To grant admin access, run `UPDATE users SET role='admin' WHERE email='your-email@example.com';` in phpMyAdmin, then sign in again.
+## Project structure
 
-## Safety and limitations
-This is an educational prototype, not a medical device. The chatbot and symptom guide cannot diagnose, prescribe medicines or recommend dosages. The symptom keyword check can miss emergencies. AI responses may be inaccurate; consult a qualified healthcare professional. Appointment requests are stored locally and are not sent to a real clinic. Do not enter sensitive personal or medical records.
+```text
+AI-Healthcare-Chatbot-/
+├── api/
+│   ├── chat.php
+│   └── clear.php
+├── assets/
+│   ├── app.css
+│   └── app.js
+├── config.php
+├── index.php
+├── .env.example
+└── README.md
+```
 
-Before real-world deployment, add HTTPS, rate limiting, audit controls, backups, privacy/consent and retention workflows, accessibility testing, and qualified clinical, legal and security review.
+## Run locally with XAMPP
+
+1. Install PHP 8.0+ (XAMPP includes PHP and Apache).
+2. Copy this repository folder into `C:\\xampp\\htdocs\\AI-Healthcare-Chatbot-`.
+3. Start Apache from the XAMPP Control Panel.
+4. Open `http://localhost/AI-Healthcare-Chatbot-/`.
+5. The app works in demo mode without an API key.
+
+## Enable an AI API
+
+Set the following as environment variables in the Apache/PHP server environment:
+
+- `AI_API_URL`: full URL of an OpenAI-compatible chat-completions endpoint.
+- `AI_API_KEY`: your secret API key.
+- `AI_MODEL`: model identifier supported by your provider.
+
+Restart Apache after changing environment variables. Do not place API keys in JavaScript, HTML, GitHub, or any public file. If the endpoint is unavailable or returns an unexpected response, the application falls back to demo mode.
+
+## Important safety notice
+
+This is an educational prototype, not a medical device or a substitute for a doctor. It cannot diagnose conditions, prescribe medicines, or recommend dosages. Its emergency keyword check is incomplete and may miss serious situations. If someone may be experiencing a medical emergency, contact local emergency services immediately. AI-generated information can be wrong; verify health decisions with a qualified healthcare professional. Do not enter identifying details or private medical records.
+
+Before real-world use, add authentication, rate limiting, secure production hosting with HTTPS, privacy and consent controls, logging and retention policies, accessibility testing, and qualified clinical, legal, and security review.
