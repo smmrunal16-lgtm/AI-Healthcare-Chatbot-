@@ -31,8 +31,29 @@ Log out and back in.
 ## Safety
 This is an educational prototype, not a medical device. It does not diagnose, prescribe medication or provide dosage recommendations. AI responses can be inaccurate. Users should consult qualified healthcare professionals; severe or rapidly worsening symptoms require urgent medical care. Do not enter sensitive personal information.
 
-## Project source archive
-The complete starter source ZIP was generated in the accompanying ChatGPT conversation. Download it there and upload/extract its contents into this repository to add all PHP, CSS, JavaScript and SQL files.
-
 ## Security before deployment
 Keep API keys server-side and out of Git. Use HTTPS, rate limiting, secure session settings, backups, privacy controls and qualified clinical review before any real-world use.
+
+## License
+
+This project is licensed under the MIT License.
+
+Copyright (c) 2026 smmrunal16-lgtm
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
